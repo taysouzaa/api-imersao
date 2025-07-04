@@ -1,64 +1,118 @@
-# Imersão DevOps - Alura Google Cloud
 
-Este projeto é uma API desenvolvida com FastAPI para gerenciar alunos, cursos e matrículas em uma instituição de ensino.
+````md
+# 🚀 API de Gestão Escolar | Imersão DevOps - Alura + Google Cloud
 
-## Pré-requisitos
+Este projeto foi desenvolvido durante a **Imersão DevOps da Alura com Google Cloud**.  
+Trata-se de uma **API REST** desenvolvida com **FastAPI** para gerenciar **alunos**, **cursos** e **matrículas** em uma instituição de ensino.
 
-- [Python 3.10 ou superior instalado](https://www.python.org/downloads/)
-- [Git](https://git-scm.com/downloads)
-- [Docker](https://www.docker.com/get-started/)
-
-## Passos para subir o projeto
-
-1. **Faça o download do repositório:**
-   [Clique aqui para realizar o download](https://github.com/guilhermeonrails/imersao-devops/archive/refs/heads/main.zip)
-
-2. **Crie um ambiente virtual:**
-   ```sh
-   python3 -m venv ./venv
-   ```
-
-3. **Ative o ambiente virtual:**
-   - No Linux/Mac:
-     ```sh
-     source venv/bin/activate
-     ```
-   - No Windows:
-     ```sh
-     venv\Scripts\activate
-     ```
-
-4. **Instale as dependências:**
-   ```sh
-   pip install -r requirements.txt
-   ```
-
-5. **Execute a aplicação:**
-   ```sh
-   uvicorn app:app --reload
-   ```
-
-6. **Acesse a documentação interativa:**
-
-   Abra o navegador e acesse:  
-   [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
-   Aqui você pode testar todos os endpoints da API de forma interativa.
+Além da lógica da aplicação, o projeto inclui:
+- Containerização com **Docker**
+- Deploy na **Google Cloud Platform**
+- Organização de código em múltiplas camadas (routers, schemas, models)
+- Documentação interativa com Swagger
 
 ---
 
-## Estrutura do Projeto
+## ✅ Funcionalidades
 
-- `app.py`: Arquivo principal da aplicação FastAPI.
-- `models.py`: Modelos do banco de dados (SQLAlchemy).
-- `schemas.py`: Schemas de validação (Pydantic).
-- `database.py`: Configuração do banco de dados SQLite.
-- `routers/`: Diretório com os arquivos de rotas (alunos, cursos, matrículas).
-- `requirements.txt`: Lista de dependências do projeto.
+- CRUD completo de Alunos, Cursos e Matrículas
+- Banco de dados com SQLite
+- Documentação automática dos endpoints
+- Estrutura modular e escalável com FastAPI
+- Imagens Docker para facilitar execução e deploy
 
 ---
 
-- O banco de dados SQLite será criado automaticamente como `escola.db` na primeira execução.
-- Para reiniciar o banco, basta apagar o arquivo `escola.db` (isso apagará todos os dados).
+## 🧱 Estrutura do Projeto
+
+```bash
+.
+├── app.py                # Ponto de entrada da aplicação
+├── database.py           # Configuração do banco de dados SQLite
+├── routers/              # Rotas organizadas por entidade (alunos, cursos, matrículas)
+├── models.py             # Modelos SQLAlchemy
+├── schemas.py            # Schemas de validação (Pydantic)
+├── requirements.txt      # Dependências do projeto
+├── Dockerfile            # Configuração de container
+├── Docker-compose.yml    # (opcional) Orquestração de containers
+└── .gitignore            # Arquivos e pastas ignoradas no Git
+````
+
+---
+
+## 🐳 Executando com Docker
+
+> Certifique-se de ter o Docker instalado: [Instalar Docker](https://www.docker.com/get-started)
+
+```bash
+# Build da imagem
+docker build -t api-escolar .
+
+# Executar container
+docker run -d -p 8000:8000 api-escolar
+```
+
+Acesse a documentação interativa em:
+[http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
+## ☁️ Deploy na Google Cloud
+
+A API foi implantada na **Google Cloud Run**, utilizando uma imagem Docker construída com base no projeto.
+Durante o processo, aprendi a:
+
+* Criar e configurar um projeto no Google Cloud
+* Fazer upload da imagem Docker para o **Google Container Registry**
+* Publicar a aplicação com **Cloud Run** com escalabilidade automática
+
+---
+
+## 🧪 Execução Local (sem Docker)
+
+> Pré-requisitos:
+
+* [Python 3.10+](https://www.python.org/downloads/)
+* [Git](https://git-scm.com/)
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
+
+# Crie e ative o ambiente virtual
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+
+# Instale as dependências
+pip install -r requirements.txt
+
+# Execute a aplicação
+uvicorn app:app --reload
+```
+
+---
+
+## 🌐 Acesse a Documentação da API
+
+Depois de iniciar o servidor (local ou Docker), a interface de teste estará disponível em:
+
+🔗 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+---
+
+## 👩‍💻 Desenvolvedora
+
+**Taynara Souza**
+📧 [taynara.souza.dev@gmail.com](mailto:taynara.souza.dev@gmail.com)
+🔗 [linkedin.com/in/taynara-correia-souza](https://www.linkedin.com/in/taynara-correia-souza)
+
+---
+
+## 📚 Créditos
+
+Projeto baseado nas instruções e desafios propostos pela **Alura** durante a **Imersão DevOps com Google Cloud**.
+Agradecimento especial ao instrutor **Guilherme Lima** por toda a didática!
 
 ---
