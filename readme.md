@@ -1,5 +1,3 @@
-
-````md
 # 🚀 API de Gestão Escolar | Imersão DevOps - Alura + Google Cloud
 
 Este projeto foi desenvolvido durante a **Imersão DevOps da Alura com Google Cloud**.  
@@ -22,7 +20,7 @@ Além da lógica da aplicação, o projeto inclui:
 - Imagens Docker para facilitar execução e deploy
 
 ---
-
+```md 
 ## 🧱 Estrutura do Projeto
 
 ```bash
